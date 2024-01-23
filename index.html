@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Workplace || Figma convert to HTML
+    </title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+
+    <!-- ==== WOW JS ==== -->
+    <script src="assets/js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </head>
+
+  <body>
+    <!-- ====== Logo Section Start -->
+    <div
+      class="ud-header absolute left-0 top-0 z-40 flex w-full items-center bg-transparent"
+    >
+      <div class="container">
+        <div class="relative -mx-4 flex items-center  justify-center">
+          <div class="w-60 max-w-full  px-4">
+            <a href="index.html" class="navbar-logo block w-full py-5">
+              <img
+                src="assets/images/logo_1.png"
+                alt="logo"
+                class="header-logo w-full text-center "
+              />
+            </a>
+          </div>
+          <div class="flex w-full items-center justify-between px-4">
+            <div>
+              <button
+                id="navbarToggler"
+                class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+              >
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-white"
+                ></span>
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-white"
+                ></span>
+                <span
+                  class="relative my-[6px] block h-[2px] w-[30px] bg-white"
+                ></span>
+              </button>
+              <nav
+                id="navbarCollapse"
+                class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:px-4 lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6"
+              >
+             </nav>
+            </div>
+            <div class="flex items-center justify-end pr-16 lg:pr-0">
+              <label
+                for="themeSwitcher"
+                class="inline-flex cursor-pointer items-center"
+                aria-label="themeSwitcher"
+                name="themeSwitcher"
+              >
+                <input
+                  type="checkbox"
+                  name="themeSwitcher"
+                  id="themeSwitcher"
+                  class="sr-only"
+                />
+                <span class="block text-white dark:hidden">
+                  <svg
+                    class="fill-current"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.3125 1.50001C12.675 1.31251 12.0375 1.16251 11.3625 1.05001C10.875 0.975006 10.35 1.23751 10.1625 1.68751C9.93751 2.13751 10.05 2.70001 10.425 3.00001C13.0875 5.47501 14.0625 9.11251 12.975 12.525C11.775 16.3125 8.25001 18.975 4.16251 19.0875C3.63751 19.0875 3.22501 19.425 3.07501 19.9125C2.92501 20.4 3.15001 20.925 3.56251 21.1875C4.50001 21.75 5.43751 22.2 6.37501 22.5C7.46251 22.8375 8.58751 22.9875 9.71251 22.9875C11.625 22.9875 13.5 22.5 15.1875 21.5625C17.85 20.1 19.725 17.7375 20.55 14.8875C22.1625 9.26251 18.975 3.37501 13.3125 1.50001ZM18.9375 14.4C18.2625 16.8375 16.6125 18.825 14.4 20.0625C12.075 21.3375 9.41251 21.6 6.90001 20.85C6.63751 20.775 6.33751 20.6625 6.07501 20.55C10.05 19.7625 13.35 16.9125 14.5875 13.0125C15.675 9.56251 15 5.92501 12.7875 3.07501C17.5875 4.68751 20.2875 9.67501 18.9375 14.4Z"
+                    />
+                  </svg>
+                </span>
+                <span class="hidden text-white dark:block">
+                  <svg
+                    class="fill-current"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_2172_3070)">
+                      <path
+                        d="M12 6.89999C9.18752 6.89999 6.90002 9.18749 6.90002 12C6.90002 14.8125 9.18752 17.1 12 17.1C14.8125 17.1 17.1 14.8125 17.1 12C17.1 9.18749 14.8125 6.89999 12 6.89999ZM12 15.4125C10.125 15.4125 8.58752 13.875 8.58752 12C8.58752 10.125 10.125 8.58749 12 8.58749C13.875 8.58749 15.4125 10.125 15.4125 12C15.4125 13.875 13.875 15.4125 12 15.4125Z"
+                      />
+                      <path
+                        d="M12 4.2375C12.45 4.2375 12.8625 3.8625 12.8625 3.375V1.5C12.8625 1.05 12.4875 0.637497 12 0.637497C11.55 0.637497 11.1375 1.0125 11.1375 1.5V3.4125C11.175 3.8625 11.55 4.2375 12 4.2375Z"
+                      />
+                      <path
+                        d="M12 19.7625C11.55 19.7625 11.1375 20.1375 11.1375 20.625V22.5C11.1375 22.95 11.5125 23.3625 12 23.3625C12.45 23.3625 12.8625 22.9875 12.8625 22.5V20.5875C12.8625 20.1375 12.45 19.7625 12 19.7625Z"
+                      />
+                      <path
+                        d="M18.1125 6.74999C18.3375 6.74999 18.5625 6.67499 18.7125 6.48749L19.9125 5.28749C20.25 4.94999 20.25 4.42499 19.9125 4.08749C19.575 3.74999 19.05 3.74999 18.7125 4.08749L17.5125 5.28749C17.175 5.62499 17.175 6.14999 17.5125 6.48749C17.6625 6.67499 17.8875 6.74999 18.1125 6.74999Z"
+                      />
+                      <path
+                        d="M5.32501 17.5125L4.12501 18.675C3.78751 19.0125 3.78751 19.5375 4.12501 19.875C4.27501 20.025 4.50001 20.1375 4.72501 20.1375C4.95001 20.1375 5.17501 20.0625 5.32501 19.875L6.52501 18.675C6.86251 18.3375 6.86251 17.8125 6.52501 17.475C6.18751 17.175 5.62501 17.175 5.32501 17.5125Z"
+                      />
+                      <path
+                        d="M22.5 11.175H20.5875C20.1375 11.175 19.725 11.55 19.725 12.0375C19.725 12.4875 20.1 12.9 20.5875 12.9H22.5C22.95 12.9 23.3625 12.525 23.3625 12.0375C23.3625 11.55 22.95 11.175 22.5 11.175Z"
+                      />
+                      <path
+                        d="M4.23751 12C4.23751 11.55 3.86251 11.1375 3.37501 11.1375H1.50001C1.05001 11.1375 0.637512 11.5125 0.637512 12C0.637512 12.45 1.01251 12.8625 1.50001 12.8625H3.41251C3.86251 12.8625 4.23751 12.45 4.23751 12Z"
+                      />
+                      <path
+                        d="M18.675 17.5125C18.3375 17.175 17.8125 17.175 17.475 17.5125C17.1375 17.85 17.1375 18.375 17.475 18.7125L18.675 19.9125C18.825 20.0625 19.05 20.175 19.275 20.175C19.5 20.175 19.725 20.1 19.875 19.9125C20.2125 19.575 20.2125 19.05 19.875 18.7125L18.675 17.5125Z"
+                      />
+                      <path
+                        d="M5.32501 4.125C4.98751 3.7875 4.46251 3.7875 4.12501 4.125C3.78751 4.4625 3.78751 4.9875 4.12501 5.325L5.32501 6.525C5.47501 6.675 5.70001 6.7875 5.92501 6.7875C6.15001 6.7875 6.37501 6.7125 6.52501 6.525C6.86251 6.1875 6.86251 5.6625 6.52501 5.325L5.32501 4.125Z"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2172_3070">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </label>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ====== Logo Section End -->
+
+    <!-- ====== Hero Section Start -->
+    <div
+      id="home"
+      class="w-full opacity-80 mix-blend-hard-light bg-gradient-to-t from-black to-white relative overflow-hidden pt-[120px]  md:pt-[130px] lg:pt-[160px]"
+      style="background-image: url('assets/images/shutterstock_210347026.png'); background-size: cover; background-position: center; height: 819px;"
+
+    >
+      <div class="container">
+        <div class="-mx-4 flex flex-wrap items-center">
+          <div class="w-full ">
+            <div
+              class="hero-content wow fadeInUp mx-auto  text-center "
+              data-wow-delay=".2s"
+            >
+            <div class=" text-center text-white  font-bold font-['Poppins']" style="font-size:96px;line-height: 96px; /* 104.348% */
+            letter-spacing: -0.92px;    margin-top: 140px;
+">
+              We provide<br/>the best talent solutions <br> for   your organization
+            </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- ====== Hero Section End -->
+
+
+<!-- ====== One About Section Start -->
+<section
+   class="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark"
+   >
+   <div class="container mx-auto">
+      <div class="flex flex-wrap items-center justify-between -mx-4">
+         <div class="w-full px-4 lg:w-6/12">
+            <div class="flex items-center -mx-3 sm:-mx-4">
+               <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                 <div class="py-3 sm:py-4">
+                     <img
+                        src="./assets/images/shutterstock_1059775265.png"
+                        alt=""
+                        class="w-[659px]"
+                        />
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+            <div class="mt-10 lg:mt-0">
+
+              <div style="width: 100%"><span style="color: #303031; font-size: 38.34px; font-family: Poppins; font-weight: 700; line-height: 69.50px; word-wrap: break-word">Our expert guidance <br/>and innovative workforce solutions enable faster and</span><span style="color: #303031; font-size: 46.86px; font-family: Playfair Display; font-style: italic; font-weight: 600; line-height: 69.50px; word-wrap: break-word"> </span><span style="color: #FF4438; font-size: 46.86px; font-family: Playfair Display; font-style: italic; font-weight: 500; line-height: 69.50px; word-wrap: break-word">smarter decisions for your talent </span><span style="color: #303031; font-size: 38.34px; font-family: Poppins; font-weight: 700; line-height: 69.50px; word-wrap: break-word">optimization.</span></div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- ====== One About Section End -->
+
+    <!-- ====== Discover  The Workplace Section Start -->
+    <section
+      class="relative z-20 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]"
+    >
+      <div class="container mx-auto" >
+        <div class="-mx-4 flex flex-wrap" >
+          <div class="w-full px-4" >
+            <div class="mx-auto mb-[60px] max-w-[510px] text-center" >
+
+              <h2
+                class="mb-3 text-6xl font-bold  text-dark  dark:text-white font-weight: 700; line-height: 61px; sm:text-4xl md:text-[40px] md:leading-[1.2]"
+                style="font-family: Poppins;"
+              >
+              Discover <br>
+              The Workplace    </h2>
+
+            </div>
+          </div>
+        </div>
+        <div class="-mx-4 flex flex-wrap justify-center " style="text-align: center; ">
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+            <div
+              class="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14"
+            >
+
+              <div style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; display: flex; align-items: center; justify-content: center;     margin-left: 60px;">
+                <span class="text-xl font-medium" style="display: inline-block;">
+                    <div class="mb-3 text-xl font-semibold text-dark dark:text-white xl:text-[42px] xl:leading-[1.21]">
+                      <span style="text-align: center; color: #FF4438; font-size: 22px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Revenues</span>
+                        <br>
+                        <span style="text-align: center; color: #303031; font-size: 34px; font-family: Poppins; font-weight: 700; word-wrap: break-word">€94M</span>                    </div>
+                </span>
+              </div>
+
+
+
+
+              <div class="mb-[50px]">
+                <span style="width: 100%; height: 100%; text-align: center; color: #FF4438; font-size: 94px; font-family: Poppins; font-weight: 700; word-wrap: break-word">300+</span>
+                <div class="flex flex-col gap-[14px]">
+                  <p style=" color: #303031; font-size: 22px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Internal Headcount</p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+            <div
+              class="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14"
+            >
+
+              <div style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; display: flex; align-items: center; justify-content: center;     margin-left: 60px;">
+                <span class="text-xl font-medium" style="display: inline-block;">
+                    <div class="mb-3 text-xl font-semibold text-dark dark:text-white xl:text-[42px] xl:leading-[1.21]">
+                      <span style="text-align: center; color: #FF4438; font-size: 22px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Clients</span>
+                        <br>
+                        <span style="text-align: center; color: #303031; font-size: 34px; font-family: Poppins; font-weight: 700; word-wrap: break-word">1,000+</span>                    </div>
+                </span>
+              </div>
+
+
+
+
+              <div class="mb-[50px]">
+                <span style="width: 100%; height: 100%; text-align: center; color: #FF4438; font-size: 94px; font-family: Poppins; font-weight: 700; word-wrap: break-word">3,000+</span>
+                <div class="flex flex-col gap-[14px]">
+                  <p style=" color: #303031; font-size: 22px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Annualy Employed Candidates</p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+            <div
+              class="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14"
+            >
+
+              <div style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid black; display: flex; align-items: center; justify-content: center;     margin-left: 60px;">
+                <span class="text-xl font-medium" style="display: inline-block;">
+                    <div class="mb-3 text-xl font-semibold text-dark dark:text-white xl:text-[42px] xl:leading-[1.21]">
+                      <span style="text-align: center; color: #FF4438; font-size: 22px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Companies</span>
+                        <br>
+                        <span style="text-align: center; color: #303031; font-size: 34px; font-family: Poppins; font-weight: 700; word-wrap: break-word">16</span>  
+                      
+                    </div>
+                </span>
+              </div>
+
+
+
+
+              <div class="mb-[50px]">
+                <span style="width: 100%; height: 100%; text-align: center; color: #FF4438; font-size: 94px; font-family: Poppins; font-weight: 700; word-wrap: break-word">4,500+</span>
+                <div class="flex flex-col gap-[14px]">
+                  <p style=" color: #303031; font-size: 22px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Payrolls</p>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Discover  The Workplace Section End -->
+
+
+          <!-- ====== Two About Section Start -->
+          <section
+          class="bg-gray-1 pb-8 pt-20 dark:bg-dark-2 lg:pb-[70px] lg:pt-[120px]"
+          >
+          <div class="container">
+            <div class="wow fadeInUp" data-wow-delay=".2s">
+              <div class="-mx-4 flex items-center">
+                <div class="w-full px-4 lg:w-1/2">
+                  <div class="mb-12 max-w-[540px] lg:mb-0" style="font-family: Poppins; ">
+                    <h2
+                      class="mb-5 text-[56px] font-bold leading-tight text-[#303031] dark:text-white sm:text-[40px] sm:leading-[1.2]"
+                    >
+                      Workplace is a collaboration between Mplus and Noordenster 
+                    </h2>
+
+                    <h5
+                    class="mb-5 text-2xl font-bold leading-tight text-dark dark:text-white sm:text-[24px] sm:leading-[1.2]"
+                  >
+                     It's the exclusive ManpowerGroup partner and license holder for the Manpower brand in multiple CEE countries    
+                  </h5>
+
+                    <p
+                      class="mb-10 text-[16px] leading-relaxed text-body-color dark:text-dark-6"
+                    >
+                    Workplace owns companies under the Manpower Brand in 6 countries in the region including Bosnia and Herzegovina, Bulgaria, Croatia,  Hungary, Serbia and Slovenia.
+                      <br />
+                      <br />
+                      Alongside Manpower branded companies, Workplace also encompasses MPS Integration, offering advanced outsourcing solutions, as well as Smart Flex, a Croatian based HR services provider.
+                    </p>
+
+
+                  </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2">
+                  <div class="-mx-2 flex flex-end sm:-mx-4 lg:-mx-2 xl:-mx-4">
+                    <div class="w-full px-2 sm:w-1/2 sm:px-4 lg:px-2 xl:px-4">
+                      <div
+                        class="mb-4 sm:mb-8 sm:h-[400px] md:h-auto lg:h-auto xl:h-auto max-w-full"
+                      >
+                        <img
+                          src="./assets/images/about/about-image-01.jpg"
+                          alt="about image"
+                          class="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+  <!-- ====== Two About Section End -->
+
+
+
+
+  <!-- Map section Start -->
+<section class="py-20 lg:py-[120px] bg-white dark:bg-dark">
+  <div class="container ">
+     <div
+        class="relative z-10 overflow-hidden rounded bg-black py-12 px-16 md:p-[70px]"
+        style="background-image: url('assets/images/bg-map.png'); background-size: cover; background-position: center; height: 819px; width: 1100px;"
+       >
+        <div class="flex flex-wrap items-center -mx-4">
+           <div class="w-full px-4 lg:w-1/2">
+              <span class="block mb-4 text-base font-medium text-white">
+              Find Your Next Dream App
+              </span>
+              <h2
+                 class="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[40px]/[48px] lg:mb-0"
+                 >
+             <span class="xs:block"> Workplace Serves Over 1.000 clients spread across its member companies and regions, making the Workplace a leader in HR Services. </span>
+           </h2>
+           </div>
+              <div class="w-full px-4">
+             
+                <div class="grid grid-cols-6 gap-8">
+                  <div class="flex w-702 p-28 md:p-40 justify-between items-center flex-shrink-0" style="background: rgba(48, 48, 49, 0.71);">
+                      <p class="text-white leading-trim text-cap font-poppins text-28 font-bold leading-50.5" style="margin-left: 24px;">
+                         Bulgaria
+                      </p>
+                      <div class="text-white leading-trim text-cap font-poppins scroll-pr-6 text-28 font-bold leading-50.5" style="margin-right: 24px;">
+                          <span class="text-white leading-trim text-cap font-poppins text-18 font-light leading-34.5">
+                              TotalbClients
+                          </span>
+                          <br>
+                          <span class="text-white leading-trim text-cap font-poppins text-24 font-bold leading-50.5">
+                             419
+                          </span>
+                          
+                      </div>
+                      
+                      
+                  </div>
+                  <div class="flex w-702 p-28 md:p-40 justify-between items-center flex-shrink-0" style="background: rgba(254, 254, 254, 0.71);">
+                      <p class=" leading-trim text-cap font-poppins text-28 font-bold leading-50.5" style="margin-left: 24px;  color: #D4145A;">
+                          Croatia
+                      </p>
+                      <div class=" leading-trim text-cap font-poppins scroll-pr-6 text-28 font-bold leading-50.5" style="margin-right: 24px; color:#303031;">
+                          <span class=" leading-trim text-cap font-poppins text-18 font-light leading-34.5" >
+                              TotalbClients
+                          </span>
+                          <br>
+                          <span class="leading-trim text-cap font-poppins text-24 font-bold leading-50.5" >
+                             139
+                          </span>
+                          
+                      </div>
+                      
+                      
+                  </div>
+                  <div class="flex w-702 p-28 md:p-40 justify-between items-center flex-shrink-0" style="background: rgba(48, 48, 49, 0.71);">
+                      <p class="text-white leading-trim text-cap font-poppins text-28 font-bold leading-50.5" style="margin-left: 24px;">
+                          Hungary
+                      </p>
+                      <div class="text-white leading-trim text-cap font-poppins scroll-pr-6 text-28 font-bold leading-50.5" style="margin-right: 24px;">
+                          <span class="text-white leading-trim text-cap font-poppins text-18 font-light leading-34.5">
+                              TotalbClients
+                          </span>
+                          <br>
+                          <span class="text-white leading-trim text-cap font-poppins text-24 font-bold leading-50.5">
+                             150
+                          </span>
+                          
+                      </div>
+                      
+                      
+                  </div>
+                  <div class="flex w-702 p-28 md:p-40 justify-between items-center flex-shrink-0" style="background: rgba(48, 48, 49, 0.71);">
+                      <p class="text-white leading-trim text-cap font-poppins text-28 font-bold leading-50.5" style="margin-left: 24px;">
+                          Serbia
+                      </p>
+                      <div class="text-white leading-trim text-cap font-poppins scroll-pr-6 text-28 font-bold leading-50.5" style="margin-right: 24px;">
+                          <span class="text-white leading-trim text-cap font-poppins text-18 font-light leading-34.5">
+                              TotalbClients
+                          </span>
+                          <br>
+                          <span class="text-white leading-trim text-cap font-poppins text-24 font-bold leading-50.5">
+                             163
+                          </span>
+                          
+                      </div>
+                      
+                      
+                  </div>
+                  <div class="flex w-702 p-28 md:p-40 justify-between items-center flex-shrink-0" style="background: rgba(48, 48, 49, 0.71);">
+                      <p class="text-white leading-trim text-cap font-poppins text-28 font-bold leading-50.5" style="margin-left: 24px;">
+                          Slovenia
+                      </p>
+                      <div class="text-white leading-trim text-cap font-poppins scroll-pr-6 text-28 font-bold leading-50.5" style="margin-right: 24px;">
+                          <span class="text-white leading-trim text-cap font-poppins text-18 font-light leading-34.5">
+                              TotalbClients
+                          </span>
+                          <br>
+                          <span class="text-white leading-trim text-cap font-poppins text-24 font-bold leading-50.5">
+                             362
+                          </span>
+                          
+                      </div>
+                      
+                      
+                  </div>
+                  <div class="flex w-702 p-28 md:p-40 justify-between items-center flex-shrink-0" style="background: rgba(48, 48, 49, 0.71);">
+                      <p class="text-white leading-trim text-cap font-poppins text-28 font-bold leading-50.5" style="margin-left: 24px;">
+                          B&H
+                      </p>
+                      <div class="text-white leading-trim text-cap font-poppins scroll-pr-6 text-28 font-bold leading-50.5" style="margin-right: 24px;">
+                          <span class="text-white leading-trim text-cap font-poppins text-18 font-light leading-34.5">
+                              TotalbClients
+                          </span>
+                          <br>
+                          <span class="text-white leading-trim text-cap font-poppins text-24 font-bold leading-50.5">
+                             50+
+                          </span>
+                          
+                      </div>
+                      
+                      
+                  </div>
+                
+                </div>
+             
+         </div>
+        </div>
+        <div>
+
+        </div>
+     </div>
+  </div>
+</section>
+<!-- Map section end -->
+
+<!-- >    Product
+& Services section  -->
+<section class="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
+  <div class="container">
+    <div class="-mx-4 flex flex-wrap">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-12 max-w-[485px] text-center lg:mb-[70px]">
+
+          <h2
+            class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]"
+          >
+          Product <br> & Services
+          </h2>
+
+        </div>
+      </div>
+    </div>
+    <section
+   class="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark"
+   >
+   <div class="container mx-auto">
+      <div class="flex flex-wrap items-center justify-between -mx-4">
+         <div class="w-full px-4 lg:w-6/12">
+            <div class="flex items-center -mx-3 sm:-mx-4">
+               <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                 <div class="py-3 sm:py-4">
+                     <img
+                        src="./assets/images/shutterstock_2156624761.png"
+                        alt=""
+                        class="w-full rounded-2xl"
+                        />
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+            <div class="mt-10 lg:mt-0">
+
+               <h2
+                  class="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[32px]/[36px]"
+                  style="font-family: Poppins;"
+                  >
+                  Workplace Offers a tailor-made Comprehensive HR Services Package With Industry Expertise and a strong Client Base               </h2>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+    <div class="-mx-4 flex flex-wrap">
+      <div class="w-full px-4 md:w-1/2 	 lg:w-1/4" style=" border: 6px rgba(235, 235, 240, 0.50) solid">
+        
+        <div class="wow fadeInUp group mb-12" data-wow-delay=".1s">
+
+
+          <p class="p-4 text-body-color  dark:text-dark-6 lg:mb-9" style="font-size: 20px; font-family: Popins;">
+            As a group, Workplace expands upon the individual offerings of all member companies to create a one-stop-shop for HR Services          </p>
+
+        </div>
+      </div>
+      <div class="w-full px-4 md:w-1/2 border-2 border-gray-500	 lg:w-1/4" style=" border: 6px rgba(235, 235, 240, 0.50) solid">
+        <div class="wow fadeInUp group mb-12" data-wow-delay=".1s">
+
+
+          <p class="p-4 text-body-color  dark:text-dark-6 lg:mb-9" style="font-size: 20px; font-family: Popins;">
+            Through state-of-the-art technical solutions and specialized teams with proven HR experience Workplace pairs clients with the best talent to suit their unique needs
+                  </p>
+        </div>
+      </div>
+      <div class="w-full px-4 md:w-1/2 border-2 border-gray-500	 lg:w-1/4" style=" border: 6px rgba(235, 235, 240, 0.50) solid">
+        <div class="wow fadeInUp group mb-12" data-wow-delay=".1s">
+
+          <p class="p-4 text-body-color  dark:text-dark-6 lg:mb-9" style="font-size: 20px; font-family: Popins;">
+            Workplace services offer clients workforce management from start to finish, allowing the client to focus on their core busines         </p>
+
+        </div>
+      </div>
+        <div class="w-full px-4 md:w-1/2 border-2 border-gray-500	 lg:w-1/4" style=" border: 6px rgba(235, 235, 240, 0.50) solid">
+        <div class="wow fadeInUp group mb-12" data-wow-delay=".1s">
+
+          <p class="p-4 text-body-color  dark:text-dark-6 lg:mb-9" style="font-size: 20px; font-family: Popins;">
+            Workplace also offers clients research solutions in order to provide a detailed and realistic representation of working conditions on the market even before recruiting begins       </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- product end section -->
+
+<!-- list section    -->
+      <div class="p-10 gap-4  bg-cover bg-center justify-between mx-auto" style=" background: url('./assets/images/Rectangle\ 4592.png') lightgray 50% / cover no-repeat; margin: 40px;">
+      <div class="container  flex flex-row ">  
+      <div class="flex  items-center justify-between ">
+
+
+        <p style=" color: white; font-size: 24px; font-family: Poppins; font-weight: 400; line-height: 40.50px; word-wrap: break-word">Our expert guidance and innovative workforce solutions enable faster and smarter decisions for your talent optimization.</p>
+      </div>
+              <div class="col-span-6 mx-4" style="margin-left: auto;">
+                  <ul class="flex w-88 h-88  flex-col justify-start items-start gap-8">
+                      <li class="flex items-center">
+                          <p class="rounded-full bg-red-500 flex items-center justify-center" style="width: 88px; height: 88px; background-color: #D4145A;">
+                              <span class="text-white font-poppins text-2xl font-bold leading-50.5">
+                                  1
+                              </span>
+                          </p>
+                          <p class="text-white font-poppins text-xl font-bold leading-50.5">
+                              Tailor made solutions for each Client
+                          </p>
+                      </li>
+                      <li class="flex items-center">
+                          <p class="rounded-full bg-red-500 flex items-center justify-center" style="width: 88px; height: 88px; background-color: #D4145A;">
+                              <span class="text-white font-poppins text-2xl font-bold leading-50.5">
+                                  2
+                              </span>
+                          </p>
+                          <p class="text-white font-poppins text-xl font-bold leading-50.5">
+                              Permanent Recruitment & Selection
+                          </p>
+                      </li>
+                      <li class="flex items-center">
+                          <p class="rounded-full bg-red-500 flex items-center justify-center" style="width: 88px; height: 88px; background-color: #D4145A;">
+                              <span class="text-white font-poppins text-2xl font-bold leading-50.5">
+                                  3
+                              </span>
+                          </p>
+                          <p class="text-white font-poppins text-xl font-bold leading-50.5">
+                              Temporary Staffing
+                          </p>
+                      </li>
+                      <li class="flex items-center">
+                          <p class="rounded-full bg-red-500 flex items-center justify-center" style="width: 88px; height: 88px; background-color: #D4145A;">
+                              <span class="text-white font-poppins text-2xl font-bold leading-50.5">
+                                  4
+                              </span>
+                          </p>
+                          <p class="text-white font-poppins text-xl font-bold leading-50.5">
+                              Payroll, Finance & HR Administration
+                          </p>
+                      </li>
+                      <li class="flex items-center">
+                          <p class="rounded-full bg-red-500 flex items-center justify-center" style="width: 88px; height: 88px; background-color: #D4145A;">
+                              <span class="text-white font-poppins text-2xl font-bold leading-50.5">
+                                  5
+                            </span>
+                          </p>
+                          <p class="text-white font-poppins text-xl font-bold leading-50.5">
+                              Advanced Outsourcing
+                          </p>
+                      </li>
+                      <li class="flex items-center">
+                          <p class="rounded-full bg-red-500 flex items-center justify-center" style="width: 88px; height: 88px; background-color: #D4145A;">
+                              <span class="text-white font-poppins text-2xl font-bold leading-50.5">
+                                  6
+                              </span>
+                          </p>
+                          <p class="text-white font-poppins text-xl font-bold leading-50.5">
+                              Education & HR Strategy
+                          </p>
+                      </li>
+                      <li class="flex items-center">
+                          <p class="rounded-full bg-red-500 flex items-center justify-center" style="width: 88px; height: 88px; background-color: #D4145A;">
+                              <span class="text-white font-poppins text-2xl font-bold leading-50.5">
+                                  7
+                              </span>
+                          </p>
+                          <p class="text-white font-poppins text-xl font-bold leading-50.5">
+                              Research
+                          </p>
+                      </li>
+                  </ul>
+              </div>
+            </div>   
+          </div>
+      
+  
+<!-- list section    -->
+
+
+    <!-- ====== Contact Start ====== -->
+    <section  class="relative md:py-[120px] " style="background-color: #FF4438; margin: 40px;" >
+      <div
+        class="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"
+      ></div>
+      <div
+        class="absolute left-5 right-5 top-5 -z-[1] w-full dark:bg-dark-700 "
+        
+      ></div>
+      <div class="container px-4">
+        <div class="-mx-4 flex flex-wrap items-center">
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/2">
+              <div class=" mb-12 lg:mb-[150px]">
+                <span
+                  class="mb-6 block  font-medium text-white dark:text-dark" style="font-size: 54px; font-family: Popins; font-weight: 700;"
+                >
+                  CONTACT US
+                </span>
+                <h2
+                  class=" text-[24px] font-semibold leading-[1.14] text-white dark:text-dark"
+                >
+                Lorem ipsum dolor sit amet, 
+                consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt 
+                ut labore et dolore magna 
+                aliqua..
+                </h2>
+              </div>
+             
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/2">
+            <div
+              class="wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial dark:bg-dark-2 dark:shadow-none sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]"
+              data-wow-delay=".2s
+              "
+            >
+          
+              <form>
+                <div class="mb-[50px]">
+                
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Adam Gelius"
+                    class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6"
+                  />
+                </div>
+                <div class="mb-[50px]">
+                 
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="example@yourmail.com"
+                    class="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6"
+                  />
+                </div>
+               
+                <div class="mb-[50px]">
+             
+                  <textarea
+                    name="message"
+                    rows="1"
+                    placeholder="type your message here"
+                    class="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6"
+                  ></textarea>
+                </div>
+                <div class="mb-4">
+                  <button
+                    type="submit"
+                    class=" w-full inline-flex items-center justify-center rounded-md bg-dark px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-blue-dark"
+                  >
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Contact End ====== -->
+
+
+
+    <footer class="bg-white dark:bg-gray-800">
+      <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+
+          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+          <div class="text-center pt-4">
+
+              <span class="block text-sm text-center text-gray-500 dark:text-gray-400">Work Place Copyright © 2023
+              </span>
+
+          </div>
+      </div>
+  </footer>
+
+    <!-- ====== Back To Top Start -->
+    <a
+      href="javascript:void(0)"
+      class="back-to-top fixed bottom-8 left-auto right-8 z-[999] hidden h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-dark"
+    >
+      <span
+        class="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-white"
+      ></span>
+    </a>
+    <!-- ====== Back To Top End -->
+
+
+
+    <!-- ====== All Scripts -->
+
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // ==== for menu scroll
+      const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+      pageLink.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(elem.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            offsetTop: 1 - 60,
+          });
+        });
+      });
+
+      // section menu active
+      function onScroll(event) {
+        const sections = document.querySelectorAll(".ud-menu-scroll");
+        const scrollPos =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop;
+
+        for (let i = 0; i < sections.length; i++) {
+          const currLink = sections[i];
+          const val = currLink.getAttribute("href");
+          const refElement = document.querySelector(val);
+          const scrollTopMinus = scrollPos + 73;
+          if (
+            refElement.offsetTop <= scrollTopMinus &&
+            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+          ) {
+            document
+              .querySelector(".ud-menu-scroll")
+              .classList.remove("active");
+            currLink.classList.add("active");
+          } else {
+            currLink.classList.remove("active");
+          }
+        }
+      }
+
+      window.document.addEventListener("scroll", onScroll);
+
+      // Testimonial
+      const testimonialSwiper = new Swiper(".testimonial-carousel", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
